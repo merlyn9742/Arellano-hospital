@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar" fxLayout="row" fxLayoutAlign="space-between">
+
+    <img class="img-icon" src="../../../assets/logo_ca.png" alt="">
+
+    <div>
+        <mat-label class="margin-icons-and-buttons" fxFlexAlign="">{{userToolbar}}</mat-label>
+    </div>
+
+    <div class="container-icon-user" fxLayout="row" fxLayoutAlign="center center">
+        <div>
+            <mat-icon matSuffix class="margin-icons-and-buttons">account_circle</mat-icon>
+            <mat-label class="margin-icons-and-buttons" fxFlexAlign="end">User Name</mat-label>
+        </div>
+    </div>
+    <button (click)="logout()">Cerrar sesión</button>
+</mat-toolbar>

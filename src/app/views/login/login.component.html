@@ -1,0 +1,34 @@
+<div class="container" fxLayout="row">
+  <div class="background" fxLayout="row"  fxLayoutAlign="center center">
+    <img  src="../../../assets/logo_ca.png" alt="">
+  </div>
+  <div class="login" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="mat-card" fxLayout="column">
+      <form [formGroup]="form" class="form-login" fxLayout="column" fxLayoutAlign="center center">
+        <div class="container-title-login">
+          <mat-label class="text-login" fxFlexAlign="baseline">Login</mat-label>
+        </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Correo</mat-label>
+          <input matInput type="email" value="" formControlName="email">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <div class="container-title-login">
+          <mat-label class="text-forget-password" fxFlexAlign="baseline">Olvide mi contraseña</mat-label>
+        </div>
+        <div *ngIf="spinner | async">
+          <mat-spinner class="container-spinner"></mat-spinner>
+        </div>
+      </form>
+      <div class="container-button-login" fxFlexAlign="end">
+        <button (click)="login()" mat-raised-button class="button-login">Iniciar sesión</button>
+      </div>
+    </mat-card>
+  </div>
+</div>

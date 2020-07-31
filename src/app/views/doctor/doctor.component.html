@@ -1,0 +1,38 @@
+<div class="toolbar">
+    <app-toolbar userToolbar="Medico"></app-toolbar>
+</div>
+
+
+
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+
+    <h2 fxFlexAlign="center" class="container-title">Paciente actual</h2>
+
+
+    <mat-card class="mat-card">
+        <h1  *ngIf="dataSource == null">No hay pacientes en consulta</h1>
+        <mat-card-content fxLayout="column">
+            <h2 *ngIf="dataSource != null">Nombre: {{dataSource.name}}</h2>
+            <h2 *ngIf="dataSource != null">Apellidos: {{dataSource.lastName}}</h2>
+            <h2 *ngIf="dataSource != null">Typo de servicio: {{dataSource.severity}}</h2>
+            <button *ngIf="dataSource != null" mat-raised-button (click)="recetar()">Recetar</button>
+        </mat-card-content>
+        
+    </mat-card>
+
+
+
+
+    <div class="button-home-container" fxLayout="row" fxLayoutAlign="center">
+        <div class="button-home-container-two" fxLayout="row" fxLayoutAlign="end">
+          
+            <button mat-raised-button (click)="seePatientsHospitalized()">Ver Pacientes internados</button>
+            <button  mat-raised-button (click)="nextPatient()">Siguiente paciente</button>
+        </div>
+
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,46 @@
+<app-toolbar userToolbar="Recetar"></app-toolbar>
+
+<div class="container" fxLayout="column" fxLayoutAlign="center center"> 
+
+    <div class="container-input-typeahead">
+        <mat-form-field class="input-full-width">
+            <mat-label>Busqueda de medicamento</mat-label>
+            <input matInput value="">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+    </div>
+
+<div class="container-matcard" fxLayout="row" fxLayoutAlign="center center">
+
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  </ng-container>
+              
+                <ng-container matColumnDef="unitCost">
+                  <th mat-header-cell *matHeaderCellDef> Precio </th>
+                  <td mat-cell *matCellDef="let element"> {{element.unitCost}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="buttons">
+                    <th mat-header-cell *matHeaderCellDef> Recetar </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+                            <mat-icon>bookmark</mat-icon>
+                          </button>
+                    </td>
+                  </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+              
+</div>
+
+
+</div>

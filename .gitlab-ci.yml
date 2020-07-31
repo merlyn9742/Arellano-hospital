@@ -1,0 +1,21 @@
+image: "julioperezag/angular-firebase:1.0.0"
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm i
+    - npm run build
+  artifacts:
+    paths:
+      - dist/clinicaArellano
+    name: clinica-arellano
+    expire_in: 1 hour
+
+deploy:
+  stage: deploy
+  script:
+    - firebase deploy --token $FIREBASE_TOKEN

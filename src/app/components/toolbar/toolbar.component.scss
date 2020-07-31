@@ -1,0 +1,23 @@
+.toolbar {
+    width: 100%;
+
+    .img-icon {
+        width: 100px;
+        margin-right: 100px;
+    }
+
+    .container-icon-user {
+        height: 100%;
+    }
+
+    .container-content-toolbar {
+        width: 100%;
+        height: 100%;
+
+        .container-content-two {
+            width: 80%;
+            height: 100%;
+            background: chartreuse;
+        }
+    }
+}

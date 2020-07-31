@@ -1,0 +1,68 @@
+<div class="toolbar" userToolbar="Doctor">
+    <app-toolbar></app-toolbar>
+</div>
+
+
+<div class="container" fxLayout="column">
+
+    <h2 fxFlexAlign="center" class="container-title">Pacientes internados</h2>
+
+    <div class="container-table" fxLayout="row" fxLayoutAlign="center center">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.patientId}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="turno">
+                <th mat-header-cell *matHeaderCellDef> Turno</th>
+                <td mat-cell *matCellDef="let element"> {{element.turn}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="nombres">
+                <th mat-header-cell *matHeaderCellDef> Nombre (s)</th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="apellidos">
+                <th mat-header-cell *matHeaderCellDef> Apellidos</th>
+                <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="gravedad">
+                <th mat-header-cell *matHeaderCellDef> Gravedad</th>
+                <td mat-cell *matCellDef="let element"> {{element.severity}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="pasar">
+                <th mat-header-cell *matHeaderCellDef> Pasar a</th>
+                <td mat-cell *matCellDef="let element"> {{element.assignedTo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cancelar">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-raised-button class="buttons">Cobrar</button>
+                    <button mat-raised-button class="buttons" (click)="openModal()">Ver Paciente</button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+    </div>
+
+    <div class="button-home-container" fxLayout="row" fxLayoutAlign="center">
+        <div class="button-home-container-two" fxLayout="row" fxLayoutAlign="end">
+            <button mat-raised-button (click)="returnDoctorMain()">Regresar</button>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+

@@ -1,0 +1,78 @@
+<app-toolbar userToolbar="Administracion"></app-toolbar>
+
+<div class="container" fxLayout="row">
+
+<div class="container-matcard" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="mat-card">
+
+        <mat-card-content>
+
+            <div class="container-button-add-medicine" fxLayout="row" fxLayoutAlign="center center">
+               <h2>Agregar Medicamento</h2>
+            </div>
+            <div class="container-content-matcard" fxLayout="column">
+
+                <div fxLayout="row" fxLayoutAlign="space-around" class="container-inputs">
+                    <div>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Nombre</mat-label>
+                            <input  [formControl]="name" matInput type="text" value="">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-around" >
+                    <div>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Costo</mat-label>
+                            <input  [formControl]="unitCost" matInput type="text" value="">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-around" class="container-inputs">
+                    <div>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Descripci&oacute;n</mat-label>
+                            <input  [formControl]="description" matInput type="text" value="">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container-button-add-medicine" fxLayout="row" fxLayoutAlign="center center">
+                <button fxLayoutAlign="center center" (click)="addMedicine()" mat-raised-button color="accent">Agregar medicamento</button>
+            </div>
+        </mat-card-content>
+
+    </mat-card>
+
+    <!-- <div *ngFor="let medication of arrayMedication">
+        <h4>{{medication.name}}</h4>
+    </div> -->
+
+</div>
+
+<div class="container-matcard" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="mat-card">
+
+        <mat-card-content fxLayout="column">
+                <div class="container-title-medication" fxLayout="row" fxLayoutAlign="space-around">
+                    <h2>Medicamento</h2>
+                    <h2>Precio</h2>
+                </div>
+                <div *ngFor="let medication of arrayMedication"  fxLayout="row" fxLayoutAlign="space-around">
+                    <h4>{{medication.name}}</h4>
+                    <h4>${{medication.unitCost}}</h4>
+                </div>
+        </mat-card-content>
+
+    </mat-card>
+
+
+
+</div>
+
+</div>
